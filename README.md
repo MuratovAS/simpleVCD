@@ -6,12 +6,12 @@ VCD file command line viewer. TUI remplacement to GTKWave.
 
 ## Download & Build
 
-Windows, Linux and MacOS binaries are available in the [releases page](../../releases)
+Linux and MacOS binaries are available in the [releases page](../../releases)
 
 Self assembly:
 
 ```bash
-gcc vcd.c -o vcd 
+gcc vcd.c -o vcd
 ```
 
 ## Usage
@@ -37,9 +37,9 @@ Usage: ./vcd [OPTION] [FILE]...:
 
 ## TODO:
 
-- [ ] fix a bug that does not allow using the entire area of the terminal 
-- [ ] Clean up your code 
+- [ ] fix a bug that does not allow using the entire area of the terminal
+- [ ] Clean up your code
 
 ## Credits
 
-This project is a fork of the [yne/vcd](https://github.com/yne/vcd) project based on an old version of the program. 
+This project is a fork of the [yne/vcd](https://github.com/yne/vcd) project based on an old version of the program.

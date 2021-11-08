@@ -4,12 +4,12 @@ on:
   push:
     branches:
     - 'main'
-    
+
 jobs:
   build:
     strategy:
       matrix:
-        os: [x86_64-linux-gnu, arm-linux-gnueabihf, aarch64-linux-gnu, x86_64-apple-darwin, x86_64-w64-mingw32]
+        os: [x86_64-linux-gnu, arm-linux-gnueabihf, aarch64-linux-gnu, x86_64-apple-darwin]
     runs-on: ubuntu-latest
     env:
       OS: ${{ matrix.os }}
@@ -32,8 +32,8 @@ jobs:
           -H 'Content-Type: application/json' \
           "https://api.github.com/repos/${GITHUB_REPOSITORY}/releases"
         RELEASE_ID=$(curl -svL https://api.github.com/repos/${GITHUB_REPOSITORY}/releases/tags/$RELEASE_TAG | jq .id)
-        
-        if [[ $OS == "x86_64-w64-mingw32" ]]; then 
+
+        if [[ $OS == "x86_64-w64-mingw32" ]]; then
           POSTFIX=".exe"
         fi
         cd $RELEASE_DIR
