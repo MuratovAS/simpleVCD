@@ -425,13 +425,11 @@ int main(int argc, char** argv)
 		.fout = stdout,
 	};
 	Parser data;
-
 	parseArgs(argc, argv, &params);
 
 	unsigned keyCode = 0;
 	unsigned rows, cols;
 	unsigned starttui = 0;
-
 	do
 	{
 		if (!starttui)
@@ -601,7 +599,6 @@ int getSize(unsigned* const rows, unsigned* const cols)
 {
 	struct winsize sz;
 	int	result;
-
 	do
 	{
 		result = ioctl(STDOUT_FILENO, TIOCGWINSZ, &sz);
@@ -609,10 +606,8 @@ int getSize(unsigned* const rows, unsigned* const cols)
 	while (result == -1 && errno == EINTR);
 	if (result == -1)
 		return errno;
-
 	if (rows)
 		*rows = sz.ws_row;
-
 	if (cols)
 		*cols = sz.ws_col;
 	return 0;
